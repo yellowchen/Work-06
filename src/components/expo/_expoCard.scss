@@ -1,0 +1,34 @@
+.expo-card-item {
+    border: 1px solid #aaa;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    img {
+        aspect-ratio: 2 / 1;
+        width: 100%;
+    }
+    .card-content {
+    height: 100%;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+        .card-title {
+            color: $primary;
+        }
+        .card-txt {
+            .card-form {
+                text-indent: -1.5rem;
+                padding-left: 1.5rem;
+            }
+        }
+        .card-price {
+            color: red;
+        }
+        .card-btn {
+            margin-top: auto;
+            align-self: flex-end;
+        }
+    }
+}
+

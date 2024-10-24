@@ -1,0 +1,160 @@
+//針對sticky的空間處理
+:root {
+    scroll-padding-top: 90px;
+}
+//針對sticky的空間處理
+
+.nav {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    height: 80px;
+    
+    background: $theme;
+    padding: 0 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav-logo {
+        display: flex;
+        .logo {
+            width: 70px;
+            height: 70px;
+            img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+    }
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3vw;
+    li {
+        a {
+            padding: 5px 0;
+            height: inherit;
+            display: inline-block;
+            color: #fff;
+            font-weight: $fw-bolder;
+            letter-spacing: 2px;
+            transform: translateY(0px);
+            transition: .3s;
+            position: relative;
+            &:hover {
+                transform: translateY(-10px);
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                border-bottom: 3px solid currentColor;
+                right: 50%;
+                left: 50%;
+                top: 100%;
+            }
+            &:hover::before {
+                right: 0;
+                left: 0;
+                transition: .3s;
+            }
+        }
+    }
+    @include media-md {
+        background-color: #ccc;
+        width: 100%;
+        padding: 1rem;
+        position: fixed;
+        top: 80px;
+        right: -100%;
+    }
+    @include media-sm {
+        height: 65px;
+        a {
+            font-size: $fs-mobile;
+        }
+    }
+}
+
+.nav-menu.visible {
+    right: 0;
+    transition: .35s;
+}
+
+.nav-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    .cart {
+        position: relative;
+        span {
+            position: absolute;
+            right: -8px;
+            top: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e34b54;
+            color: #fff;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+        }
+    }
+    .bread-crumb {
+        display: none;
+        @include media-md {
+            display: block;
+        }
+    }
+}
+
+
+.bread-menu {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        top: -3px;
+        right: -2px;
+        background: transparent;
+        z-index: -1;
+    }
+    .bread-bar {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 6px;
+        transition: .3s;
+    }
+}
+
+.bread-menu.clicked {
+    .bread-bar {
+        &:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        &:nth-child(2) {
+            background-color: transparent;
+        }
+        &:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.home {
+    .banner {
+        height: 100vh;
+        background: url("../assets/smile.jpg")fixed  center bottom / cover;
+        padding-right: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        color: $primary;
+        line-height: $lh-1;
+        @include media-md {
+            letter-spacing: 0;
+            padding-right: 1rem;
+        }
+        h1 {
+            font-size: clamp(3.1rem, pxToVw(100), 8rem);
+            text-shadow: $ts-a;
+            margin: .5vw 0;
+        }
+        h3 {
+            font-size: clamp(1.5rem, pxToVw(36), 4rem);
+        }
+        h3:first-child {
+            color: #fff;
+            letter-spacing: .5vw;
+        }
+        
+    }
+    .container {
+        h2 {
+            margin-bottom: 1vw;
+            @include media-md {
+                text-align: center;
+            }  
+        }
+        .intro-expo {
+            display: flex;
+            flex-direction: column;
+            gap: 3vw;
+        }
+    }
+}

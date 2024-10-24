@@ -1,0 +1,37 @@
+.footer {
+    background: $theme;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    @include media-md {
+        align-items: center;
+        text-align: center;
+    }
+    .service {
+        padding-bottom: 1vw;
+        margin-bottom: 1vw;
+        border-bottom: 2px solid #fff;
+        .company {
+            line-height: 1.75;
+            margin-bottom: 1vw;
+        }
+    }
+    .copyright {
+        h6 {
+            font-size: $fs-m;
+        }
+    }
+}
+
+.social-media {
+    ul {
+        display: flex;
+        gap: 1rem;
+        @include media-md {
+            justify-content: center;
+        }
+    }
+}
+
+
+

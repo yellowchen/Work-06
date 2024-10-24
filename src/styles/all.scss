@@ -1,0 +1,25 @@
+@import '~bootstrap/scss/bootstrap';
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_mixin.scss";
+@import "_base.scss";
+@import "_layout.scss";
+@import "_function.scss";
+
+//component
+@import "../components/nav/navbar";
+@import "../components/footer/footer";
+// @import "../components/form/button";
+@import "../components/home/homeCard";
+@import "../components/expo/expoCard";
+@import "../components/product/productCard";
+@import "../components/product/productCarousel";
+@import "../components/cart/cartItem";
+
+//Page
+@import "../page/home";
+@import "../page/intro";
+@import "../page/expo";
+@import "../page/product";
+@import "../page/detail";
+@import "../page/cart";

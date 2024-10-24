@@ -1,0 +1,18 @@
+[
+	{
+		"id": "founder",
+		"img": "https://picsum.photos/300/200/?random=10",
+		"content":
+			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed mollitia, quibusdam quo quis, asperiores odit reiciendis odio quas voluptatem nesciunt dolorem et accusantium tenetur labore ipsum? Quia optio provident mollitia, deleniti illo porro! Excepturi ducimus nisi itaque voluptas totam ipsum necessitatibus vero, vitae ad exercitationem nihil cupiditate dolores ullam earum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore quis et hic architecto ex, amet facere voluptas tenetur nulla. Sint!"
+	},
+	{
+		"id": "history",
+		"content":
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, at modi. Magni dolorem dignissimos illum deserunt sed et laudantium consequuntur aperiam, libero, delectus cum aliquam error quibusdam. Sapiente nobis suscipit cupiditate! Nostrum excepturi dignissimos explicabo, vero ex nam fugit, deserunt aspernatur iste fuga eligendi beatae quibusdam unde inventore in reiciendis."
+	},
+	{
+		"id": "spirit",
+		"content":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio praesentium quae eveniet. Laboriosam ut consequuntur expedita hic. Mollitia, dignissimos sunt cumque eaque animi pariatur sit?"
+	}
+]

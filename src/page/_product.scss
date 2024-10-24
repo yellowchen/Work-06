@@ -1,0 +1,33 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    margin-bottom: 2vw;
+}
+
+.p-list {
+    text-align: center;
+    line-height: 3rem;
+    .p-link {
+        width: 9rem;
+        color: #aaa;
+        display: block;
+        cursor: pointer;
+        border: 1px solid #aaa;
+        border-radius: 10px;
+        &:hover {
+            color: #fff;
+            border: 1px solid #8bb4e8;
+            background-color: #8bb4e8;
+        }
+        @include media-sm {
+            font-size: $fs-mobile;
+            width: 7rem;
+        }
+    }
+    .p-link.choose {
+        color: #fff;
+        border: 1px solid $primary;
+        background-color: $primary;
+    }
+}

@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+//css
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/all.scss";
+
+//component
+import Front from "./page/Front";
+import Home from "./page/Home";
+import Detail from "src/page/Detail";
+import { PageList } from './data/ListData';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	
+	// console.log(typeof PageList[0].name);
+
+	return (
+		<div className='App'>
+			<Routes>
+				<Route path='/' element={<Front />}>
+					<Route index element={<Home />} />
+					<Route path="product/:slug" element={<Detail />} />
+					{PageList.map((item) => (
+						<Route key={item.id} path={item.path} element={item.element} />
+					))}
+				</Route>
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
