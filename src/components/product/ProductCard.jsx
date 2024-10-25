@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { addToCart } from 'src/features/cartSlice';
 //Other
-import * as Io5Icon from "react-icons/io5";
+import { IoCartOutline } from "react-icons/io5";
 
 
 const Card = (props) => {
@@ -36,7 +36,7 @@ const Card = (props) => {
 					{name} / {price}
 				</h6>
 				<button className='p-add btn btn-red' onClick={handleAddToCart}>
-					<Io5Icon.IoCartOutline size='20px' color='#fff' />
+					<IoCartOutline size='20px' color='#fff' />
 				</button>
 			</div>
 		</div>

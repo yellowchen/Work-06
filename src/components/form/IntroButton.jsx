@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const IntroButton = () => {
+const IntroButton = (item) => {
+	console.log(item);
     return (
-		<div className='d-flex' style={{width: "13rem", gap: ".5rem"}}>
+		<div className='d-flex' style={{ width: "13rem", gap: ".5rem" }}>
 			<button type='button' className='btn btn-primary'>
-				Buy Ticket
+				<Link to={item.slug}>
+					Buy Ticket
+				</Link>
 			</button>
-			<button type='button' className='btn btn-primary' >
+			<button type='button' className='btn btn-primary'>
 				More Info
 			</button>
 		</div>

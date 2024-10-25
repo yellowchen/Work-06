@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { FaSquareFacebook } from "react-icons/fa6";
-import IntroButton from '../form/IntroButton';
+// import IntroButton from '../form/IntroButton';
 
 
 const Card = ({data}) => {
@@ -21,7 +22,15 @@ const Card = ({data}) => {
 							</h4>
 							<p>{item.content}</p>
 							<div className='card-btn'>
-								<IntroButton />
+								{/* <IntroButton /> */}
+								<div className='d-flex' style={{ width: "13rem", gap: ".5rem" }}>
+									<button type='button' className='btn btn-primary'>
+										<Link to="/product">Buy Ticket</Link>
+									</button>
+									<button type='button' className='btn btn-primary'>
+										<Link to={`/product/${item.slug}`}>More Info</Link>
+									</button>
+								</div>
 							</div>
 						</div>
 						<div className='card-side'>
@@ -32,9 +41,7 @@ const Card = ({data}) => {
 								<h6>{item.endDate}</h6>
 								<h6>{item.endMonth}</h6>
 							</div>
-							<FaSquareFacebook 		
-								size='30px' 
-								style={{ marginTop: "auto" }} />
+							<FaSquareFacebook size='30px' style={{ marginTop: "auto" }} />
 						</div>
 					</div>
 				</div>

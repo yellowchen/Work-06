@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { IconContext } from "react-icons";
 import { FaRegCalendarDays } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-import IntroButton from '../form/IntroButton';
+// import IntroButton from '../form/IntroButton';
 
 
 const Card = ({data}) => {
@@ -32,9 +33,17 @@ const Card = ({data}) => {
 								{item.address}
 							</div>
 						</div>
-						<h5 className='card-price'>{item.price}</h5>
+						<h5 className='card-price'>${item.price}</h5>
 						<div className='card-btn'>
-							<IntroButton />
+							{/* <IntroButton data={item}/> */}
+							<div className='d-flex' style={{ width: "13rem", gap: ".5rem" }}>
+								<button type='button' className='btn btn-primary'>
+									<Link to='/product'>Buy Ticket</Link>
+								</button>
+								<button type='button' className='btn btn-primary'>
+									<Link to={`/product/${item.slug}`}>More Info</Link>
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
