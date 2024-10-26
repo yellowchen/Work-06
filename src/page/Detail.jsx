@@ -53,10 +53,14 @@ const Detail = () => {
 
 	return (
 		<div className='detail container'>
+			{/* {Data.map((item) => (
+				<img src={item.img} alt={item.name} width='300px' height='200px' />
+			))} */}
+
 			<h3 className='title-form'>Product Detail</h3>
 			<div className='detail-item'>
 				<div className='detail-img'>
-					<img src={detail?.img} alt={detail?.name} style={{width: "300px", height: "200px"}}/>
+					<img src={detail?.img} alt={detail?.name} />
 				</div>
 				<div className='detail-txt'>
 					<div className='detail-title'>

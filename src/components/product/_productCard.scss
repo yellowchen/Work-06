@@ -5,7 +5,9 @@
     gap: .5vw;
     a {
         img {
+            // max-width: 200px;
             max-width: 100%;
+            aspect-ratio: 3/2;
             // &:hover {
             //     border: .5rem solid transparent;
             //     transition-duration: .01s;

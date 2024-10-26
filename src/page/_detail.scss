@@ -11,9 +11,10 @@
             align-items: center;
         }
         .detail-img {
-            
             img {
-                min-width: 330px;
+                // min-width: 330px;
+                max-width: 330px;
+                aspect-ratio: 3/2;
             }
         }
     }

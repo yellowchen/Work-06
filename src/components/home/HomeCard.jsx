@@ -11,7 +11,7 @@ const Card = ({data}) => {
 			{data.map((item) => (
 				<div className='home-card-item' key={item.id}>
 					<div className='home-card-img'>
-						<img src={item.img} alt={item.name} width='300px' />
+						<img src={item.img} alt={item.name}/>
 					</div>
 					<div className='home-card-content'>
 						<div className='card-txt'>

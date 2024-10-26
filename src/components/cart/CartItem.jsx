@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import productData from "../../assets/shopProduct.json";
 import { removeFromCart, changeQuantity } from 'src/features/cartSlice';
-import * as FaIcon from "react-icons/fa";
+import {FaTrash} from "react-icons/fa";
 
 
 
@@ -79,7 +79,7 @@ const CartItem = (props) => {
 				<h5 className='cart-total'>${price * quantity}</h5>
 			</div>
 			<button className='btn btn-del' onClick={handleRemoveFromCart}>
-				<FaIcon.FaTrash size='24px' color='#e34b54' />
+				<FaTrash size='24px' color='#e34b54' />
 			</button>
 		</div>
 	);
