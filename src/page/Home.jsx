@@ -12,6 +12,7 @@ const Home = () => {
     return (
 		<div className='home'>
 			<div className='banner'>
+				<p>test</p>
 				<h3>01 Jun - 31 Oct</h3>
 				<h1>Laugh Expo</h1>
 				<h3>hav fun with every moment</h3>
