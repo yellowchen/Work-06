@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Navigate } from "react-router-dom";
 
 //Page
@@ -14,12 +14,17 @@ import Payment from "src/page/Payment";
 import CheckoutSuccess from "src/page/CheckoutSuccess";
 import Page404 from "src/page/Page404";
 
+//icon
+import { FaSquareFacebook } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
+import { RiTwitterXFill } from "react-icons/ri";
+import { FaYoutube } from "react-icons/fa";
+
 
 const NavList = [
 	{ id: "home", path: "/" },
 	{ id: "intro", path: "intro" },
 	{ id: "expo", path: "expo" },
-
 	{ id: "product", path: "product" },
 ];
 
@@ -29,14 +34,41 @@ const PageList = [
 	{ id: "expo", path: "expo", element: <Expo /> },
 
 	{ id: "product", path: "product", element: <Product /> },
-	{ id: "cart", path: "cart", element: <Cart /> },
 	{ id: "login", path: "login", element: <Login /> },
-	{ id: "checkout", path: "checkout", element: <Checkout /> },
-	{ id: "payment", path: "payment", element: <Payment /> },
-	{ id: "checkoutSuccess", path: "success/:orderId", element: <CheckoutSuccess /> },
 	{ id: "notFound", path: "not-found", element: <Page404 /> },
 	{ id: "notFound", path: "*", element: <Navigate to='/not-found' /> },
 ];
 
+const AccountList = [
+	{ id: "cart", path: "cart", element: <Cart /> },
+	{ id: "checkout", path: "checkout", element: <Checkout /> },
+	{ id: "payment", path: "payment", element: <Payment /> },
+	{ id: "checkoutSuccess", path: "success/:orderId", element: <CheckoutSuccess /> },
+];
 
-export { NavList, PageList };
+
+const IconList = [
+	{
+		id: "fb",
+		path: "https://www.facebook.com/?locale=zh_TW",
+		icon: <FaSquareFacebook />,
+	},
+	{
+		id: "ig",
+		path: "https://www.instagram.com/",
+		icon: <RiInstagramFill />,
+	},
+	{
+		id: "tw",
+		path: "https://twitter.com",
+		icon: <RiTwitterXFill />,
+	},
+	{
+		id: "yt",
+		path: "https://www.youtube.com",
+		icon: <FaYoutube />,
+	},
+];
+
+
+export { NavList, PageList, AccountList, IconList };

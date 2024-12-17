@@ -12,8 +12,8 @@
         }
         .detail-img {
             img {
-                // min-width: 330px;
-                max-width: 330px;
+                min-width: 330px;
+                max-width: 400px;
                 aspect-ratio: 3/2;
             }
         }
@@ -28,7 +28,6 @@
         @include media-md {
             text-align: center;
         }
-        h4 {}
     }
     .detail-btn {
         display: flex;
@@ -39,16 +38,14 @@
         .quantity-btn {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 1rem;
             button {
-                width: 10px;
-                height: 80%;
-                background-color: #fff;
+                width: 1rem;
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-            span {}
         }
         .btn-add {
             width: 7rem;
@@ -56,7 +53,6 @@
             color: #fff;
             background-color: #aaa;
             &:hover {
-                
                 background-color: #000;
             }
         }

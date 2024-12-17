@@ -1,27 +1,29 @@
 // @ts-nocheck
 import React, {useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
-import {useSelector } from 'react-redux';
-
+import { useSelector } from 'react-redux';
 import { IconContext } from 'react-icons';
-import * as Fa6Icon  from "react-icons/fa6";
-import * as GrIcon from "react-icons/gr";
+import { FaCartShopping } from "react-icons/fa6";
+import { GrUserManager } from "react-icons/gr";
+
 import { Images } from 'src/assets';
 import { NavList } from '../../data/ListData';
 import Cart from 'src/page/Cart';
+import { auth } from 'src/config/firebase';
 // import BreadCrumb from './BreadCrumb';
 
 
-
 const Navbar = () => {
+
+	console.log(auth);
 
 	//change class (最初設定)
 	const [menu_class, setMenuClass] = useState("nav-menu");
 	const [bread_class, setBreadClass] = useState("bread-menu");
 
 	//toggle
-	//sidebar定義是側邊攔，預設是false
-	//click後：sidebar變true(會顯現)、bread變X
+	//sidebar定義是側邊攔，預設是false(不顯現側邊欄)
+	//click後：sidebar變true(會顯現)、bread從三變X
 	const [aside, setAside] = useState(false);
 
 	const [totalQuantity, setTotalQuantity] = useState(0);
@@ -31,7 +33,6 @@ const Navbar = () => {
 		carts.forEach(item => total += item.quantity);
 		setTotalQuantity(total);
 	}, [carts]);
-	
 
 	const asideToggle = () => {
 		if (!aside) {
@@ -61,7 +62,7 @@ const Navbar = () => {
 				{/* 01 nav-logo */}
 				<div className='nav-logo'>
 					<NavLink className='logo' to='/'>
-						<img src={Images.logo} alt='' />
+						<img src={Images.logo} alt='logo' />
 					</NavLink>
 				</div>
 				{/* 02 nav-menu */}
@@ -72,13 +73,20 @@ const Navbar = () => {
 						</li>
 					))}
 					<NavLink to='login' className='login'>
-						<GrIcon.GrUserManager />
+						{auth?.currentUser?.displayName 
+						? (
+							<div className='user-photo'>
+								<img src={auth?.currentUser.photoURL} alt='user-photo' />
+							</div>
+						) : (
+							<GrUserManager />
+						)}
 					</NavLink>
 				</ul>
 				{/* 03 nav-side */}
 				<div className='nav-side'>
 					<NavLink to='/cart' className='cart'>
-						<Fa6Icon.FaCartShopping />
+						<FaCartShopping />
 						{Cart}
 						<span>{totalQuantity}</span>
 					</NavLink>

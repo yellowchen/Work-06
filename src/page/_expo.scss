@@ -1,20 +1,18 @@
-.expo {
-    .expo-nav {
-        display: flex;
-        gap: 1.5rem;
-        border-bottom: 1px solid #aaa;
-        margin-bottom: 4vw;
-        line-height: 50px;
-        @include media-md {
-            justify-content: space-around;
-        }
-        h4 {
-            cursor: pointer;
-        }
-        .underline {
-            border-bottom: 4px solid red;
-            color: red;
-        }
+.expo-nav {
+    display: flex;
+    gap: 1.5rem;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 4vw;
+    line-height: 50px;
+    @include media-md {
+        justify-content: space-around;
+    }
+    h4 {
+        cursor: pointer;
+    }
+    .underline {
+        border-bottom: 4px solid red;
+        color: red;
     }
 }
 

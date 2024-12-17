@@ -1,6 +1,6 @@
 .expo-card-item {
     border: 1px solid #aaa;
-    height: 450px;
+    min-height: 420px;
     display: flex;
     flex-direction: column;
     img {
@@ -9,21 +9,22 @@
     }
     .card-content {
     height: 100%;
-    padding: 1vw;
+    padding: .5rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.5vw;
         .card-title {
             color: $primary;
+            .card-price {
+                color: red;
+                font-size: 20px;
+            }
         }
         .card-txt {
-            .card-form {
+            .icon-form {
                 text-indent: -1.5rem;
                 padding-left: 1.5rem;
             }
-        }
-        .card-price {
-            color: red;
         }
         .card-btn {
             margin-top: auto;

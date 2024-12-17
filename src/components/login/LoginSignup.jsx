@@ -1,26 +1,34 @@
 import React, {useState} from 'react';
 import { IconContext } from 'react-icons';
+import { useNavigate } from 'react-router-dom';
 
 //icon
 import {FaUserCircle} from "react-icons/fa";
 import {MdOutlineEmail} from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
-import { FaLine } from "react-icons/fa6";
-import { FaApple } from "react-icons/fa6";
+// import { FaLine } from "react-icons/fa6";
+// import { FaApple } from "react-icons/fa6";
 
-//Google一般安裝
+
+//Google第三方登入
+
+//01 Google一般安裝
 //import { GoogleLogin } from "@react-oauth/google";
 //import { jwtDecode } from "jwt-decode";
 
-//Google客製
+//02 Google客製
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 
+
+
 const LoginSignup = () => {
+
+	const navigate = useNavigate();
 	const [action, setAction] = useState("Sign Up");
 
-	//客製安裝google
+	//02客製安裝google
 	const login = useGoogleLogin({
 		onSuccess: async(response) => {
 			try {
@@ -33,12 +41,16 @@ const LoginSignup = () => {
 					}
 				);
 				console.log(res);
+				console.log(res.data.name);
+				navigate("/");
 			} catch(err) {
 				console.log(err);
 			}
 		}
 
 	});
+
+
 
 
 	return (
@@ -102,14 +114,14 @@ const LoginSignup = () => {
 								Log in with
 								<FcGoogle style={{ marginLeft: "15px" }} />
 							</button>
-							<button>
+							{/* <button>
 								Log in with
 								<FaLine style={{ marginLeft: "15px" }} color='#00CB42' />
 							</button>
 							<button>
 								Log in with
 								<FaApple style={{ marginLeft: "15px" }} color='#fff' />
-							</button>
+							</button> */}
 						</div>
 					</div>
 				</div>

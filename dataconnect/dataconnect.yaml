@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "work06"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "work06-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

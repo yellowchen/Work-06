@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 import ProgressBar from 'src/components/cart/ProgressBar';
 import CustomerInfoForm from 'src/components/cart/CustomerInfoForm';

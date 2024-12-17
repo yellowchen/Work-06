@@ -6,7 +6,6 @@ const initialState = {
 	// 	? JSON.parse(localStorage.getItem("cartItems")) 
 	// 	: [],
 	cartItems: [],
-
 	//indexProductId
 	//cartQuantity
 	// cartTotalQuantity: 0,
@@ -18,73 +17,41 @@ const cartSlice = createSlice({
 	name: "cart",
 	initialState,
 	reducers: {
+		//add
 		addToCart(state, action) {
-			//old
 			const { productId, name, img, price, quantity } = action.payload;
-			const indexProductId = state.cartItems.findIndex((item) => item.productId === productId);
+			const indexProductId = (state.cartItems).findIndex(item => item.productId === productId);
 
 			indexProductId >= 0
 				? (state.cartItems[indexProductId].quantity += quantity)
 				: state.cartItems.push({ productId, name, img, price, quantity });
 
 			console.log({...action.payload});
-
-			//new
-			// const indexProductId = state.cartItems.findIndex(
-			// 	item => item.id === action.payload.id
-			// );
-			// console.log(indexProductId);
-
-			// if (indexProductId >= 0) {
-			// 	state.cartItems[indexProductId].cartQuantity++
-			// }else {
-			// 	const tempProduct = {...action.payload, cartQuantity: 1};
-			// 	state.cartItems.push(tempProduct);
-			// }
-			// console.log({ ...action.payload });
 		},
 
-		//new
-		// decreaseCart(state, action) {
-		// 	const indexProductId = state.cartItems.findIndex((item) => item.id === action.payload.id);
-		// 	if(state.cartItems[indexProductId].cartQuantity > 1) {
-		// 		state.cartItems[indexProductId].cartQuantity--;
-		// 	}else if (state.cartItems[indexProductId].cartQuantity === 1) {
-		// 		//remove this item
-		// 		const newCartItems = state.cartItems.filter(
-		// 			(item) => item.id !== action.payload.id
-		// 		);
-		// 		state.cartItems = newCartItems;
-		// 	}
-		// },
-
-		//old
+		//change
 		changeQuantity(state, action) {
 			const { productId, quantity } = action.payload;
 			const indexProductId = (state.cartItems).findIndex(item => item.productId === productId);
+
 			quantity > 0
 				? (state.cartItems[indexProductId].quantity = quantity)
 				: (state.cartItems = (state.cartItems).filter(item => item.productId !== productId));
 		},
 
+		//remove
 		removeFromCart(state, action) {
-			//old
 			const { productId } = action.payload;
 			const newCartItems = (state.cartItems).filter(item => item.productId !== productId);
 			state.cartItems = newCartItems;
-
-			// //new
-			// const newCartItems = state.cartItems.filter((item) => item.id !== action.payload.id);
-			// state.cartItems = newCartItems;
 		},
 
+		//clearAll
 		clearCart(state, action) {
 			state.cartItems = [];
 		},
 	},
 });
-
-
 
 
 export default cartSlice.reducer;

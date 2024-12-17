@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 //Slider
 import Slider from 'react-slick';
@@ -38,6 +38,7 @@ const ProductCarousel = (props) => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
+					dots: false,
 				},
 			},
 		],

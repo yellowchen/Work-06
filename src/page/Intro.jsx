@@ -1,11 +1,8 @@
-import React from 'react';
-
+// import React from 'react';
 import IntroData from "../assets/introData.json";
-
 
 const Intro = () => {
     return (
-		///整理className
 		<div className='intro container'>
 			<div className='intro-nav'>
 				<h5>Intro</h5>
@@ -33,7 +30,5 @@ const Intro = () => {
 		</div>
 	);
 }
-
-
 
 export default Intro;

@@ -9,28 +9,28 @@
     position: sticky;
     top: 0;
     height: 80px;
-    
     background: $theme;
     padding: 0 1.5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .nav-logo {
-        display: flex;
-        .logo {
-            width: 70px;
-            height: 70px;
-            img {
-                width: 70px;
-                height: 70px;
-                border-radius: 50%;
-                object-fit: cover;
-                object-position: top center;
-            }
+}
+
+/* 01 nav-logo */
+.nav-logo {
+    .logo {
+        display: block;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {                      
+            object-position: top center;
         }
     }
 }
 
+/* 02 nav-menu */
 .nav-menu {
     display: flex;
     justify-content: space-around;
@@ -38,9 +38,9 @@
     gap: 3vw;
     li {
         a {
+            display: inline-block;
             padding: 5px 0;
             height: inherit;
-            display: inline-block;
             color: #fff;
             font-weight: $fw-bolder;
             letter-spacing: 2px;
@@ -50,6 +50,7 @@
             &:hover {
                 transform: translateY(-10px);
             }
+            //hover底線往左右兩邊延伸
             &::before {
                 content: "";
                 position: absolute;
@@ -74,9 +75,21 @@
         right: -100%;
     }
     @include media-sm {
-        height: 65px;
+        height: 4rem;
         a {
             font-size: $fs-mobile;
+        }
+    }
+    .login {
+        .user-photo {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{                      
+                object-position: top center;
+            }
         }
     }
 }
@@ -86,6 +99,8 @@
     transition: .35s;
 }
 
+
+/* 03 nav-side */
 .nav-side {
     display: flex;
     justify-content: center;
@@ -97,9 +112,7 @@
             position: absolute;
             right: -8px;
             top: -10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
             background-color: #e34b54;
             color: #fff;
             width: 23px;
@@ -114,7 +127,6 @@
         }
     }
 }
-
 
 .bread-menu {
     width: 36px;

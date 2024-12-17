@@ -26,7 +26,7 @@ const Detail = () => {
 
 	//handleMinus
 	const handleMinusQuantity = () => {
-		setQuantity(quantity - 1 < 1 ? 1 : quantity - 1);
+		setQuantity((quantity - 1) < 1 ? 1 : quantity - 1);
 	};
 
 	//handlePlus
@@ -53,10 +53,6 @@ const Detail = () => {
 
 	return (
 		<div className='detail container'>
-			{/* {Data.map((item) => (
-				<img src={item.img} alt={item.name} width='300px' height='200px' />
-			))} */}
-
 			<h3 className='title-form'>Product Detail</h3>
 			<div className='detail-item'>
 				<div className='detail-img'>

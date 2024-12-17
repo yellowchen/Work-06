@@ -11,7 +11,6 @@ const Product = () => {
 	const recommendArray = Data.filter(item => item.type === "Recommend");
 	const souvenirArray = Data.filter(item => item.type === "Souvenir");
 
-
     return (
 		<div className='product container'>
 			<ul className='p-menu title title-form'>

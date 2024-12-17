@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -29,12 +29,13 @@ const Card = (props) => {
 	return (
 		<div className='product-card-item' key={id}>
 			<Link to={slug}>
-				<img src={img} alt={name}/>
+				<img src={img} alt={name} />
 			</Link>
 			<div className='p-card-content'>
 				<h6 className='title'>
-					{name} / {price}
+					{name}
 				</h6>
+				<h6>${price}</h6>
 				<button className='p-add btn btn-red' onClick={handleAddToCart}>
 					<IoCartOutline size='20px' color='#fff' />
 				</button>

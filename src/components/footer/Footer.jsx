@@ -1,13 +1,11 @@
 import React from 'react'
 import { IconContext } from "react-icons";
+import { Link } from 'react-router-dom';
 
-import * as FaIcons from "react-icons/fa";
-import * as Fa6Icons from "react-icons/fa6";
-import * as RiIcons from "react-icons/ri";
-
-
+import { IconList } from 'src/data/ListData';
 
 const Footer = () => {
+
     return (
 		<div className='footer container'>
 			<div className='service'>
@@ -20,26 +18,11 @@ const Footer = () => {
 				<div className='social-media'>
 					<IconContext.Provider value={{ color: "#fff", size: "30" }}>
 						<ul>
-							<li>
-								<a href='!#'>
-									<Fa6Icons.FaSquareFacebook />
-								</a>
-							</li>
-							<li>
-								<a href='!#'>
-									<RiIcons.RiInstagramFill />
-								</a>
-							</li>
-							<li>
-								<a href='!#'>
-									<RiIcons.RiTwitterXFill />
-								</a>
-							</li>
-							<li>
-								<a href='!#'>
-									<FaIcons.FaYoutube />
-								</a>
-							</li>
+							{IconList.map((item) => (
+								<Link to={item.path} target='_blank'>
+									<li key='item.id'>{item.icon}</li>
+								</Link>
+							))}
 						</ul>
 					</IconContext.Provider>
 				</div>

@@ -63,10 +63,10 @@ const CustomerInfoForm = () => {
 	//onSubmit
 	const onSubmit = (data) => {
 		const user = {
-			name: data.name,
+			name: data.firstName +" "+ data.lastName,
 			email: data.email,
-			tel: data.tel,
-			address: data.city + data.state,
+			tel: data.phone,
+			address: data.add,
 		};
 
 		console.log("Form Submitted", data);
@@ -114,7 +114,7 @@ const CustomerInfoForm = () => {
 	return (
 		<>
 			<form
-				className='cart-main border rounded-1 border-dark'
+				className='cart-main border-gray'
 				onSubmit={handleSubmit(onSubmit, onError)}
 				id='customerInfoForm'
 				noValidate
@@ -236,7 +236,6 @@ const CustomerInfoForm = () => {
 									</option>
 								))
 							}
-							{/* city多選幾次，state的選項就會怪怪的? */}
 						</Selection>
 					</div>
 					<div>
@@ -249,16 +248,9 @@ const CustomerInfoForm = () => {
 							rules={{ required: "Zip Code is required" }}
 						/>
 					</div>
-
-					{/* <button 
-						// type='submit' 
-						disabled={!isDirty || !isValid}
-					>
-						Submit
-					</button> */}
 				</div>
 			</form>
-			<DevTool control={control} />
+			{/* <DevTool control={control} /> */}
 		</>
 	);
 }
