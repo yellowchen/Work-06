@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 
-import expoData from "../assets/shopExpo.json";
+import Data from "src/assets/Data.json";
 import ExpoCard from 'src/components/expo/ExpoCard';
 
 
 const Expo = () => {
 	const [action, setAction] = useState("Recent");
 	
-	const recentArray = expoData.filter((item) => item.type === "Recent");
-	const recommendArray = expoData.filter((item) => item.type === "Recommend");
+	const recentArray = Data.filter((item) => item.type === "Recent");
+	const recommendArray = Data.filter((item) => item.type === "Recommend");
 	
     return (
 		<div className='expo container'>

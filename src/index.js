@@ -6,7 +6,7 @@ import ScrollToTop from "./utils/scrollToTop";
 import { Provider } from 'react-redux';
 // import AuthProvider from './config/AuthProvider';
 import { store } from './features';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
