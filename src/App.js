@@ -16,6 +16,8 @@ import ProtectedRoutes from "./utils/ProtectedRoutes";
 
 function App() {
 	const user = { login: false };
+	
+
 	return (
 		<div className='App'>
 			<Routes>
