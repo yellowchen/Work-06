@@ -110,7 +110,6 @@ const CustomerInfoForm = () => {
 		setAddressData(usData);
 	}, []);
 
-	renderCount++;
 	return (
 		<>
 			<form
@@ -120,7 +119,7 @@ const CustomerInfoForm = () => {
 				noValidate
 			>
 				<div className='cart-title'>
-					<h4>Receiving Info({renderCount / 2})</h4>
+					<h4>Receiving Info</h4>
 				</div>
 				<div className='cart-content px-3 row gy-3'>
 					{/* <h6>watched value: {JSON.stringify(watchForm)}</h6> */}

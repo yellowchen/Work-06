@@ -20,7 +20,9 @@ const Card = ({data}) => {
 		>
 			{data.map((item) => (
 				<div className='expo-card-item' key={item.id}>
-					<img src={item.img} alt={item.name} />
+					<div className='expo-card-img'>
+						<img src={item.img} alt={item.name} />
+					</div>
 					<div className='card-content'>
 						<h5 className='card-title title'>
 							{item.name} / <small className='card-price'>${item.price}</small>
@@ -37,9 +39,8 @@ const Card = ({data}) => {
 						</div>
 
 						<div className='card-btn'>
-							<IntroButton item={item}/>
+							<IntroButton item={item} />
 						</div>
-
 					</div>
 				</div>
 			))}

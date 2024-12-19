@@ -1,11 +1,16 @@
 .expo-card-item {
     border: 1px solid #aaa;
+    border-radius: 10px;
+    overflow: hidden;
     min-height: 420px;
     display: flex;
     flex-direction: column;
     img {
         aspect-ratio: 2 / 1;
         width: 100%;
+        @include media-md {
+            aspect-ratio: 3 / 2;
+        }
     }
     .card-content {
     height: 100%;
