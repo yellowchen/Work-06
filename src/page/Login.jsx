@@ -1,25 +1,20 @@
 import React, {useState} from 'react';
-// import LoginSignup from 'src/components/login/LoginSignup';
 import { useEffect } from 'react';
-import { IconContext } from "react-icons";
 import { useNavigate } from "react-router-dom";
-import { auth, provide, db } from "src/config/firebase";
-import { signInWithPopup, onAuthStateChanged, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, provide } from "src/config/firebase";
+import { signInWithPopup, onAuthStateChanged, setPersistence, signOut, browserSessionPersistence } from "firebase/auth";
 
 //toast
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
 //icon
-import { FaUserCircle } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
-import { RiLockPasswordLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 
+import Signup from 'src/components/login/Signup';
+import Signin from 'src/components/login/Signin';
 
 const Login = () => {
-
-
     const navigate = useNavigate();
     const [action, setAction] = useState("Sign Up");
 
@@ -28,10 +23,9 @@ const Login = () => {
         console.log(res);
         navigate("/");
     }
-
     const logout = () => {
         auth.signOut();
-        navigate("/");
+		navigate("/");
     };
 
 	//判斷是否登入
@@ -39,16 +33,12 @@ const Login = () => {
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
 				localStorage.setItem("loggedIn", true);
-				localStorage.setItem("username", auth.currentUser.displayName)
+				localStorage.setItem("username", auth.currentUser.displayName);
 			} else {
 				console.log("failed");
 			}
 		});
 	}, []);
-
-	
-
-
 
     return (
 		<div className='container'>
@@ -94,34 +84,10 @@ const Login = () => {
 					</div>
 
 					{/* 03 info */}
-					<div className='inputs'>
-						<IconContext.Provider
-							value={{
-								style: { margin: "0 10px" },
-							}}
-						>
-							{/* 03 info: name  */}
-							{action === "Sign Up" ? (
-								<div className='input'>
-									<FaUserCircle />
-									<input type='text' placeholder='Name' />
-								</div>
-							) : (
-								<div></div>
-							)}
-							<div className='input'>
-								<MdOutlineEmail />
-								<input type='email' placeholder='Email Id' />
-							</div>
-							<div className='input'>
-								<RiLockPasswordLine />
-								<input type='password' placeholder='Password' />
-							</div>
-							<div className='member-submit'>
-								<button>Submit</button>
-							</div>
-						</IconContext.Provider>
-					</div>
+					{action === "Sign Up"
+						? <Signup />
+						: <Signin />
+					}
 
 					{/* 04 quick: login + lost password  */}
 					{action === "Log In" ? (

@@ -1,5 +1,3 @@
-// import { useNavigate } from "react-router-dom";
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -7,12 +5,6 @@ import { initializeApp } from "firebase/app";
 //新增：
 import {getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 
-// import {getFirestore, addDoc, collection} from "firebase/firestore";
-
-
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -30,13 +22,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Cloud Firestore and get a reference to the service
-// export const db = getFirestore(app);
-
-//新增：export auth
+//新增：Initialize Firebase Authentication 
 export const auth = getAuth(app);
-//新增：export provide(for what)
-export const provide = new GoogleAuthProvider();
+
+//新增：宣告 Google Provider & can select account
+export const provide = new GoogleAuthProvider().setCustomParameters({prompt: "select_account"});
+
 
 //signup
 export const signUp = async (email, password) => {
@@ -48,11 +39,6 @@ export const signUp = async (email, password) => {
     );
     const user = userCredential.user;
     console.log(user);
-    // await addDoc(collection(db, "users"), {
-    //   user: user.uid,
-    //   email: user.email,
-    // })
-    // return true
   }catch (err) {
     return {error: err.message}
   }
