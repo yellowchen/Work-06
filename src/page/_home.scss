@@ -1,5 +1,7 @@
 .home {
     .banner {
+        max-width: 100%;
+
         height: 100vh;
         background: url("../assets/smile.jpg")fixed  center bottom / cover;
         padding-right: 4rem;
@@ -13,6 +15,7 @@
             letter-spacing: 0;
             padding-right: 1rem;
         }
+
         h1 {
             font-size: clamp(3.1rem, pxToVw(100), 8rem);
             text-shadow: $ts-a;

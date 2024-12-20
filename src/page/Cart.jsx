@@ -64,7 +64,7 @@ const Cart = () => {
 								<h4>$ {subTotal}</h4>
 							</div>
 							<div className='cart-btn'>
-								<Link to='/' className='btn btn-primary'>
+								<Link to='/product' className='btn btn-primary'>
 									Continue Shopping
 								</Link>
 								<Link to='/checkout' className='btn btn-primary'>

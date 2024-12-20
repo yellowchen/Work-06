@@ -66,11 +66,11 @@ const Detail = () => {
 					</div>
 					<div className='detail-btn'>
 						<div className='quantity-btn'>
-							<button className='btn' onClick={handleMinusQuantity}>
+							<button className='btn left-btn' onClick={handleMinusQuantity}>
 								-
 							</button>
 							<span>{quantity}</span>
-							<button className='btn' onClick={handlePlusQuantity}>
+							<button className='btn right-btn' onClick={handlePlusQuantity}>
 								+
 							</button>
 						</div>

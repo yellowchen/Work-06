@@ -11,7 +11,8 @@
     justify-content: center;
     gap: 2vw;
     height: 80%;
-    border: 1px solid red;
+    flex: 0 1 auto;
+    margin-top: 5rem;
     .start-shopping{
         a {
             span {
@@ -44,8 +45,6 @@
 }
 
 .cart-detail {
-    // border: 1px solid #aaa;
-    // border-radius: 5px;
     display: flex;
     flex-direction: column;
     .cart-title {
@@ -64,18 +63,8 @@
     padding: 1rem;
 }
 
-// .cart-coupon {
-//     border: 1px solid #aaa;
-//     border-radius: 5px;
-//     .cart-content {
-//         padding: 1rem;
-//     }
-// }
-
 .cart-grand-total {
     flex: auto;
-    // border: 1px solid #aaa;
-    // border-radius: 5px;
     align-self: flex-start;
     @include media-md {
         flex: none;

@@ -2,6 +2,19 @@
 import IntroData from "../assets/introData.json";
 
 const Intro = () => {
+	const scrollToAnchor = (anchorName) => {
+		if (anchorName) {
+			let anchorElement = document.getElementById(anchorName);
+			if (anchorElement) {
+				anchorElement.scrollIntoView({
+					block: "start",
+					behavior: "instant"
+				})
+			}
+		}
+	};
+
+
     return (
 		<div className='intro container'>
 			<div className='intro-nav'>
@@ -9,7 +22,8 @@ const Intro = () => {
 				<ul className='intro-menu title'>
 					{IntroData.map((item) => (
 						<li key={item.id} className='intro-list'>
-							<a href={"#" + item.id}>{item.id}</a>
+							<button onClick={() => scrollToAnchor(item.id)} className="anchor title btn">{item.id}</button>
+							{/* <a href={"#" + item.id}>{item.id}</a> */}
 						</li>
 					))}
 				</ul>

@@ -54,7 +54,7 @@ const Navbar = () => {
 		<IconContext.Provider
 			value={{
 				verticalAlign: "middle",
-				size: "36px",
+				size: "29px",
 				color: "#fff",
 			}}
 		>
