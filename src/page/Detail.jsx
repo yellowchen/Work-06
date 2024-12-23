@@ -53,7 +53,7 @@ const Detail = () => {
 
 	return (
 		<div className='detail container'>
-			<h3 className='title-form'>Product Detail</h3>
+			<h3 className='title-form'>Product</h3>
 			<div className='detail-item'>
 				<div className='detail-img'>
 					<img src={detail?.img} alt={detail?.name} />

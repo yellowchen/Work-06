@@ -1,9 +1,8 @@
 .home {
     .banner {
         max-width: 100%;
-
         height: 100vh;
-        background: url("../assets/smile.jpg")fixed  center bottom / cover;
+        background: url("../assets/smile.jpg")fixed no-repeat center bottom / cover;
         padding-right: 4rem;
         display: flex;
         flex-direction: column;
