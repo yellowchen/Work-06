@@ -1,9 +1,8 @@
-// import React from "react";
 import Navbar from "src/components/nav/Navbar";
 import Footer from "src/components/footer/Footer";
 import { Outlet } from "react-router-dom";
 
-const FrontLayout = () => {
+const Front = () => {
     return (
 		<div className="wrapper">
 			<Navbar />
@@ -15,4 +14,4 @@ const FrontLayout = () => {
 	);
 };
 
-export default FrontLayout;
+export default Front;

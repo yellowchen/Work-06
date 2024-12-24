@@ -1,18 +1,16 @@
-// import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import CartItem from 'src/components/cart/CartItem';
 import { clearCart} from 'src/features/cartSlice';
 import { FaArrowRight } from "react-icons/fa6";
-import  ProgressBar from 'src/components/cart/ProgressBar';
+import  ProgressBar from 'src/utils/ProgressBar';
+import thousandFormat from 'src/utils/thousandFormat';
 
 
 const Cart = () => {
-
     const carts = useSelector(store => store.cart.cartItems);
 	console.log(carts);
-
 	const subTotal = carts.reduce((total, item) => total = total + item.quantity * item.price, 0);
 	console.log(subTotal);
 
@@ -45,11 +43,7 @@ const Cart = () => {
 								</button>
 							</div>
 							{carts.map((item) => (
-								<CartItem
-									key={item.id}
-									data={item}
-									//data等於傳進的item
-								/>
+								<CartItem key={item.id} data={item} />
 							))}
 						</div>
 					</div>
@@ -61,7 +55,7 @@ const Cart = () => {
 						<div className='cart-content'>
 							<div className='grand-total d-flex justify-content-between'>
 								<h4>訂單總計</h4>
-								<h4>$ {subTotal}</h4>
+								<h4>$ {thousandFormat(subTotal)}</h4>
 							</div>
 							<div className='cart-btn'>
 								<Link to='/product' className='btn btn-primary'>

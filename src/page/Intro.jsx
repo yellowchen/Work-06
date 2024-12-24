@@ -1,20 +1,7 @@
-// import React from 'react';
 import IntroData from "../assets/introData.json";
+import scrollToAnchor from "src/utils/scrollToAnchor";
 
 const Intro = () => {
-	const scrollToAnchor = (anchorName) => {
-		if (anchorName) {
-			let anchorElement = document.getElementById(anchorName);
-			if (anchorElement) {
-				anchorElement.scrollIntoView({
-					block: "start",
-					behavior: "instant"
-				})
-			}
-		}
-	};
-
-
     return (
 		<div className='intro container'>
 			<div className='intro-nav'>
@@ -23,7 +10,6 @@ const Intro = () => {
 					{IntroData.map((item) => (
 						<li key={item.id} className='intro-list'>
 							<button onClick={() => scrollToAnchor(item.id)} className="anchor title btn">{item.id}</button>
-							{/* <a href={"#" + item.id}>{item.id}</a> */}
 						</li>
 					))}
 				</ul>
@@ -35,7 +21,7 @@ const Intro = () => {
 							<h4>{item.id}</h4>
 						</div>
 						<p>
-							<img src={item.img} alt='' />
+							<img src={item.img} alt={item.id} />
 							{item.content}
 						</p>
 					</div>

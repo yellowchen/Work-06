@@ -1,8 +1,5 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 
-//新增：
 import {getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 
 
@@ -17,7 +14,6 @@ const firebaseConfig = {
   appId: "1:162050060671:web:0c5a03d16eb28308d8ea4a",
   measurementId: "G-2L78E48KFG"
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

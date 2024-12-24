@@ -1,5 +1,5 @@
-// import React from 'react';
 import { useSelector } from 'react-redux';
+import thousandFormat from 'src/utils/thousandFormat';
 
 const CartInfo = () => {
     const carts = useSelector((store) => store.cart.cartItems);
@@ -50,7 +50,7 @@ const CartInfo = () => {
 									<h6>{item.quantity}</h6>
 								</td>
 								<td className='align-middle text-end'>
-									<h6>${item.quantity * item.price}</h6>
+									<h6>${thousandFormat(item.quantity * item.price)}</h6>
 								</td>
 							</tr>
 						))}
@@ -58,7 +58,7 @@ const CartInfo = () => {
 				</table>
 				<div className='d-flex justify-content-end gap-5 pe-2'>
 					<h4>SubTotal</h4>
-					<h4 className='text-danger'>${subTotal}</h4>
+					<h4 className='text-danger'>${thousandFormat(subTotal)}</h4>
 				</div>
 			</div>
 		</div>

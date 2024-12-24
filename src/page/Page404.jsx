@@ -1,5 +1,3 @@
-import React from "react";
-
 import { TbMoodCry } from "react-icons/tb";
 
 
@@ -13,7 +11,7 @@ const NotFound = () => {
 			gap: ".5rem",
 			}}>
 			<h2>404</h2>
-			<p>Page not found</p>
+			<p className="title">Page not found</p>
 			<TbMoodCry 
 				size="60px"
 			/>

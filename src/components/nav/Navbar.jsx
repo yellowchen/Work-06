@@ -2,7 +2,9 @@
 import React, {useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { IconContext } from 'react-icons';
+
+//icon
+import { IconContext } from "react-icons";
 import { FaCartShopping } from "react-icons/fa6";
 import { GrUserManager } from "react-icons/gr";
 
@@ -48,7 +50,6 @@ const Navbar = () => {
 		setAside(!aside);
 		//以aside的相反值去執行
 	};
-
 
     return (
 		<IconContext.Provider

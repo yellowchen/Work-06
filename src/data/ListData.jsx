@@ -1,10 +1,10 @@
-// import React from "react";
 import { Navigate } from "react-router-dom";
 
 //Page
 import Intro from "src/page/Intro";
 import Expo from "src/page/Expo";
 import Product from "src/page/Product";
+import Detail from "src/page/Detail";
 
 // import Ticket from "src/page/Ticket";
 import Cart from "src/page/Cart";
@@ -28,12 +28,11 @@ const NavList = [
 	{ id: "product", path: "product" },
 ];
 
-
 const PageList = [
 	{ id: "intro", path: "intro", element: <Intro /> },
 	{ id: "expo", path: "expo", element: <Expo /> },
-
 	{ id: "product", path: "product", element: <Product /> },
+	{ id: "detail", path: "product/:slug", element: <Detail /> },
 	{ id: "login", path: "login", element: <Login /> },
 	{ id: "notFound", path: "not-found", element: <Page404 /> },
 	{ id: "notFound", path: "*", element: <Navigate to='/not-found' /> },
@@ -45,7 +44,6 @@ const AccountList = [
 	{ id: "payment", path: "payment", element: <Payment /> },
 	{ id: "checkoutSuccess", path: "success/:orderId", element: <CheckoutSuccess /> },
 ];
-
 
 const IconList = [
 	{

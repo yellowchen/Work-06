@@ -1,5 +1,5 @@
 import React from 'react'
-import ProgressBar from 'src/components/cart/ProgressBar'
+import ProgressBar from 'src/utils/ProgressBar'
 
 const Payment = () => {
     return (

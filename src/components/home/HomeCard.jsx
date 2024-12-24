@@ -1,6 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
 import { FaSquareFacebook } from "react-icons/fa6";
 import IntroButton from './../form/IntroButton';
 

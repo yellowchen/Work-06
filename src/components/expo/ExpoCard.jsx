@@ -1,6 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
 import { IconContext } from "react-icons";
 import { FaRegCalendarDays } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";

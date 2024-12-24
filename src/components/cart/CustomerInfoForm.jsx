@@ -1,20 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { useForm, useWatch } from 'react-hook-form';
-import { useNavigate, useOutletContext } from 'react-router-dom';
-import { DevTool } from '@hookform/devtools';
+// import { DevTool } from '@hookform/devtools';
 
 import Input from '../form/Input';
 import Selection from '../form/Selection';
 import usData from "../../assets/usData.json";
-import {Toast, InputConfirmation} from "../../utils/toast-helper";
-
-
-let renderCount = 0;
+import {InputConfirmation} from "../../utils/toast-helper";
+import { ageRegex, mailRegex } from 'src/utils/RegExp';
 
 const CustomerInfoForm = () => {
-	//useNavigate 處理轉址
-	const navigation = useNavigate();
-
 	// useForm 管理表格輸入與驗證
 	const {
 		register,
@@ -28,14 +22,8 @@ const CustomerInfoForm = () => {
 		mode: "onSubmit",
 	});
 
-	//useState
 	const [addressData, setAddressData] = useState([]);
 
-	// watch
-	// const watchForm = watch();
-
-	//watch + useEffect
-	//監聽但不觸發單個欄位的重新渲染
 	useEffect(() => {
 		const subscription = watch((value) => {
 			console.log(value);
@@ -50,15 +38,6 @@ const CustomerInfoForm = () => {
 		defaultValue: "" });
 
 	console.log(watchCity);
-
-	//useState
-	// const [isLoading, setIsLoading] = useState(false);
-
-	//useOutletContext 父路由向子路由傳遞data
-	//子
-	// const { getCurrentCart } = useOutletContext();
-;
-
 
 	//onSubmit
 	const onSubmit = (data) => {
@@ -81,24 +60,6 @@ const CustomerInfoForm = () => {
 				<p>Address: ${user.address}</p>
 			`,
 		});
-
-		// if (isConfirmed) {
-		// 	setIsLoading(true);
-		// 	try {
-		// 		// const res = await postOrder(user, data.message);
-		// 		// const orderId = res.data.orderId;
-		// 		//Toast
-		// 		// getCurrentCart();
-		// 		navigation(`/payment/`);
-		// 	} catch (error) {
-		// 		Toast.fire({
-		// 			icon: "error",
-		// 			title: "mistake happen",
-		// 		});
-		// 	} finally {
-		// 		setIsLoading(false);
-		// 	}
-		// }
 	};
 
 	//onError
@@ -152,7 +113,7 @@ const CustomerInfoForm = () => {
 							rules={{
 								required: "Email is required",
 								pattern: {
-									value: /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/,
+									value: mailRegex,
 									message: "Invalid email format",
 								},
 							}}
@@ -169,7 +130,7 @@ const CustomerInfoForm = () => {
 							max='99'
 							rules={{
 								required: "Age is required",
-								pattern: { value: /^([1-9][0-9]?){0,1}$/, message: "Invalid age" },
+								pattern: { value: ageRegex, message: "Invalid age" },
 								valueAsNumber: true,
 							}}
 						/>

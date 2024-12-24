@@ -1,11 +1,9 @@
-import React from 'react'
 import { IconContext } from "react-icons";
 import { Link } from 'react-router-dom';
 
 import { IconList } from 'src/data/ListData';
 
 const Footer = () => {
-
     return (
 		<div className='footer container'>
 			<div className='service'>
@@ -19,8 +17,8 @@ const Footer = () => {
 					<IconContext.Provider value={{ color: "#fff", size: "30" }}>
 						<ul>
 							{IconList.map((item) => (
-								<Link to={item.path} target='_blank'>
-									<li key='item.id'>{item.icon}</li>
+								<Link to={item.path} target='_blank' key={item.id}>
+									<li>{item.icon}</li>
 								</Link>
 							))}
 						</ul>

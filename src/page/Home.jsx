@@ -1,5 +1,3 @@
-import React from 'react';
-
 import HomeCard from 'src/components/home/HomeCard';
 import Data from "../assets/Data.json";
 

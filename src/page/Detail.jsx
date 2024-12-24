@@ -7,22 +7,23 @@ import { addToCart } from 'src/features/cartSlice';
 
 
 const Detail = () => {
+	const history = useNavigate();
 	const { slug } = useParams();
 	console.log(slug);
 	const [detail, setDetail] = useState([]); //useState裡先設空陣列，這樣detail才會是物件
 	const [quantity, setQuantity] = useState(1);
-	const history = useNavigate();
 
-	//處理計算?
+	//處理slug
 	useEffect(() => {
 		const findDetail = Data.filter((item) => item.slug === slug);
 		console.log(findDetail);
 
-		//404畫面跳轉的沒有很順
-		findDetail && findDetail.length > 0 
+		findDetail?.length > 0 
 			? setDetail(findDetail[0]) 
 			: (window.location.href = "/not-found");
 	}, [slug]);
+
+		console.log(detail);
 
 	//handleMinus
 	const handleMinusQuantity = () => {
@@ -35,6 +36,7 @@ const Detail = () => {
 	};
 
 	const dispatch = useDispatch();
+	
 	//addToCart
 	const handleAddToCart = () => {
 		dispatch(
@@ -45,25 +47,21 @@ const Detail = () => {
 				price: detail.price,
 				quantity: quantity,
 			})
-
-			// addToCart(cartItem)
 		);
-		history("/cart");
+		history("/product");
 	};
 
 	return (
 		<div className='detail container'>
-			<h3 className='title-form'>Product</h3>
+			<h3 className='title-form title'>{detail.name}</h3>
 			<div className='detail-item'>
 				<div className='detail-img'>
 					<img src={detail?.img} alt={detail?.name} />
 				</div>
 				<div className='detail-txt'>
-					<div className='detail-title'>
-						<h4 className='title'>
-							{detail.name} / ${detail.price}
-						</h4>
-					</div>
+					<h4 className='detail-price'>
+						${detail.price}
+					</h4>
 					<div className='detail-btn'>
 						<div className='quantity-btn'>
 							<button className='btn left-btn' onClick={handleMinusQuantity}>

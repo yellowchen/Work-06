@@ -4,10 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { auth, provide } from "src/config/firebase";
 import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
 
-//toast
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
 //icon
 import { FcGoogle } from "react-icons/fc";
 

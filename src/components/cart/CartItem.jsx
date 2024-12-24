@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { removeFromCart, changeQuantity } from 'src/features/cartSlice';
 import {FaTrash} from "react-icons/fa";
-
+import thousandFormat from 'src/utils/thousandFormat';
 
 
 const CartItem = (props) => {
@@ -12,7 +12,6 @@ const CartItem = (props) => {
 	console.log(props.data);
 
 	const dispatch = useDispatch();
-
 	const handleMinusQuantity = () => {
 		dispatch(
 			changeQuantity({
@@ -42,11 +41,12 @@ const CartItem = (props) => {
 	return (
 		<div className='cart-item'>
 			<div className='cart-img'>
-				<img className="rounded-2" src={img} alt={name} />
+				<img className='rounded-2' src={img} alt={name} />
 			</div>
 			<div className='cart-content'>
 				<h6 className='cart-item-title title'>
-					{name} / ${price}
+					{name} / 
+					${price}
 				</h6>
 				<div className='quality-btn'>
 					<button className='btn left-btn' onClick={handleMinusQuantity}>
@@ -59,7 +59,7 @@ const CartItem = (props) => {
 				</div>
 			</div>
 			<div className='cart-item-total'>
-				<h5 className='cart-total'>${price * quantity}</h5>
+				<h5 className='cart-total'>${thousandFormat(price * quantity)}</h5>
 			</div>
 			<button className='btn btn-del' onClick={handleRemoveFromCart}>
 				<FaTrash size='24px' color='#e34b54' />
