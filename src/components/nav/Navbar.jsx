@@ -74,10 +74,13 @@ const Navbar = () => {
 						</li>
 					))}
 					<NavLink to='login' className='login'>
-						{auth?.currentUser?.displayName 
-						? (
+						{auth?.currentUser?.displayName ? (
 							<div className='user-photo'>
-								<img src={auth?.currentUser.photoURL} alt='user-photo' />
+								{auth?.currentUser.photoURL ? (
+									<img src={auth?.currentUser.photoURL} alt='user-photo' />
+								) : (
+									<span>{auth?.currentUser.displayName}</span>
+								)}
 							</div>
 						) : (
 							<GrUserManager />

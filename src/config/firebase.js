@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-import {getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import {getAuth, GoogleAuthProvider, signInWithEmailAndPassword} from "firebase/auth";
 
 
 // Your web app's Firebase configuration
@@ -18,27 +18,10 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-//新增：Initialize Firebase Authentication 
-export const auth = getAuth(app);
+export const auth = getAuth(app);  //新增：Initialize Firebase Authentication 
 
-//新增：宣告 Google Provider & can select account
-export const provide = new GoogleAuthProvider().setCustomParameters({prompt: "select_account"});
+export const provide = new GoogleAuthProvider().setCustomParameters({prompt: "select_account"});  //新增：宣告 Google Provider & can select account
 
-
-//signup
-export const signUp = async (email, password) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password,
-    );
-    const user = userCredential.user;
-    console.log(user);
-  }catch (err) {
-    return {error: err.message}
-  }
-};
 
 //signin
 export const signIn = async (email, password) => {

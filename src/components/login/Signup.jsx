@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import { signUp } from 'src/config/firebase';
+import { auth } from "src/config/firebase";
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 //icon
 import { IconContext } from "react-icons";
@@ -8,24 +10,41 @@ import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 
 
+
 const Signup = () => {
+	const navigate = useNavigate();
+
 	const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-		setName("");
-        setEmail("");
-		setPassword("");
-		const res = await signUp(email, password);
-		if (res.error) setError(res.error);
+		e.preventDefault();
+		try {
+			const userCredential = await createUserWithEmailAndPassword(
+				auth,
+				email,
+				password,
+			);
+			console.log(userCredential);
+			const user = userCredential.user;
+
+			const updateName = await updateProfile(auth.currentUser, {
+				displayName: name
+			});
+			console.log(updateName);
+				
+			localStorage.setItem("token", user.accessToken);
+			localStorage.setItem("user", JSON.stringify(user));
+			
+			navigate("/");
+		}catch(err) {
+			console.log(err);
+		}
     };
 
     return (
 		<>
-			{error ? <div>{error}</div> : null}
 			<form onSubmit={handleSubmit}>
 				<IconContext.Provider
 					value={{

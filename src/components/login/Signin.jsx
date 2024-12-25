@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import { signIn } from 'src/config/firebase';
+import { auth } from 'src/config/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 //icon
 import { IconContext } from "react-icons";
@@ -7,17 +9,25 @@ import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 
 const Signin = () => {
-
+	const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setEmail("");
-        setPassword("");
-        const res = await signIn(email, password);
-        if(res.error) setError(res.error);
+		try {
+			const userCredential = await signInWithEmailAndPassword(auth, email, password);
+			const user = userCredential.user;
+			console.log(user);
+
+			localStorage.setItem("token", user.accessToken);
+			localStorage.setItem("user", JSON.stringify(user));
+
+			navigate("/");
+		}catch(err) {
+			setError(err);
+		}
     };
 
     return (
