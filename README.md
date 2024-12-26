@@ -24,10 +24,10 @@
 - 使用 firebase: website hosting 基本信箱密碼登入、Google第三分登入
   
 
-【專利安裝】
-$ git clone https://github.com/yellowchen.github.io/Work-06.git
-$ cd Work-06
-$ npm install
+【專利安裝】  
+$ git clone https://github.com/yellowchen.github.io/Work-06.git  
+$ cd Work-06  
+$ npm install  
 $ npm start
 
 
