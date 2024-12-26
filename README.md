@@ -1,5 +1,7 @@
 【專案簡介】
 這是一個以介紹展覽活動、並販售票券與紀念品的網站，顧客能在網站中瀏覽展覽資訊，並將喜歡的活動與紀念品加入購物車，使用者在登入的狀態下可進行購買行為。
+![](https://res.cloudinary.com/da85u8p5e/image/upload/v1735200815/Home_we1l2g.jpg)
+![](https://res.cloudinary.com/da85u8p5e/image/upload/v1735200816/Home_mobile_dzbgcy.jpg)
 
 [【Live Demo】](https://yellowchen.github.io/Work-06/)
 
