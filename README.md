@@ -4,7 +4,7 @@
 <img src="https://res.cloudinary.com/da85u8p5e/image/upload/v1735200816/Home_mobile_dzbgcy.jpg" width="160px" />
 <img src="https://res.cloudinary.com/da85u8p5e/image/upload/v1735202254/Home_mobile_nav_ks0ldo.jpg" width="160px">
 
-[【Live Demo】](https://yellowchen.github.io/Work-06/)
+[【Live Demo】](https://yellowchen.github.io/Work-06/_blank)
 
 【功能介紹】
 - 使用者可在網站瀏覽展覽資訊，檢視特定展覽活動
