@@ -16,11 +16,9 @@
 
 ## 【使用技術】
 - 使用 Create React App 建立專案環境
-- 使用 React functional components & hooks、RTK 進行開發
+- 使用 React Functional components & hooks、RTK 進行開發
 - 使用 React Hook Form 開發表單，實現表單監聽、驗證等功能
-- 使用 Bootstrap 5 進行 RWD 響應式網頁排版
-- 使用 Sass 客製樣式
-- 使用 Github Actions 將更新內容自動部署至 GitHub Pages
+- 使用 Sass、Bootstrap 5 進行 RWD 響應式網頁排版
 - 使用 firebase: website hosting (信箱密碼登入、Google第三方登入)
   
 
