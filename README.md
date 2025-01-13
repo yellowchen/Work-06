@@ -24,7 +24,7 @@
 
 ## 【專案安裝】  
 ```
-$ git clone https://github.com/yellowchen.github.io/Work-06.git  
+$ git clone https://github.com/yellowchen/Work-06.git  
 $ cd Work-06  
 $ npm install  
 $ npm start
